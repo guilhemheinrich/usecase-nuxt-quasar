@@ -1,0 +1,15 @@
+services:
+  nuxt-ssr:
+    # Nom du build: référence au Dockerfile dans le dossier apps/qanopee-core
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # Recrée le conteneur quand les fichiers changent
+    # volumes:
+    #   - .:/app
+    # Utiliser le port 3000 en local et à l'intérieur du conteneur
+    ports:
+      - '4000:3000'
+    # Démarrer le serveur
+    # command: sh -c "node dist/apps/qanopee-core/main.js"
+    command: sh -c "sleep infinity"
